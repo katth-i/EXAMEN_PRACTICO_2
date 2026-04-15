@@ -1,0 +1,51 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+
+double calcularPago(double costo, double cobertura) {
+
+    if (costo < 0) {
+        return 0;
+    }
+
+    double pago;
+
+    if (cobertura >= 0 && cobertura <= 1) {
+        pago = costo * (1 - cobertura);
+    }
+
+    else if (cobertura > 1 && cobertura <= costo) {
+        pago = costo - cobertura;
+    }
+
+    else if (cobertura > costo) {
+        pago = 0;
+    }
+
+    else {
+        pago = costo;
+    }
+
+    return pago;
+}
+
+int main() {
+    double costo, cobertura;
+
+    cout << "--- Sistema de Facturacion Clinica ---" << endl;
+
+    cout << "Ingrese el costo de la atencion: ";
+    cin >> costo;
+    cout << "Ingrese la cobertura (use 0.20 para 20% o el monto en dolares): ";
+    cin >> cobertura;
+
+    double totalAPagar = calcularPago(costo, cobertura);
+
+    cout << fixed << setprecision(2);
+    cout << "\n------------------------------------" << endl;
+    cout << "El total a pagar por el paciente es: $" << totalAPagar << endl;
+    cout << "------------------------------------" << endl;
+
+    return 0;
+}
