@@ -1,0 +1,23 @@
+ void menuAhorcado() {
+        int op;
+        do {
+            cout << "\n========================================\n";
+            cout << "     AHORCADO CLINICO - MENU\n";
+            cout << "========================================\n";
+            cout << "  1. Jugar 1 vs 1\n";
+            cout << "  2. Jugar vs CPU\n";
+            cout << "  3. Ver resultados e historial\n";
+            cout << "  4. Ver instrucciones\n";
+            cout << "  5. Volver al menu principal\n";
+            cout << "  Opcion: "; cin >> op;
+            switch (op) {
+                case 1: modo1vs1();        break;
+                case 2: modoVsCPU();       break;
+                case 3: verResultados();   break;
+                case 4: mostrarInstrucciones(); break;
+                case 5: cout << "  Volviendo...\n"; break;
+                default: cout << "  [!] Opcion invalida.\n";
+            }
+        } while (op != 5);
+    }
+};
