@@ -1,4 +1,5 @@
- void menuAhorcado() {
+
+void menuAhorcado() {
         int op;
         do {
             cout << "\n========================================\n";
